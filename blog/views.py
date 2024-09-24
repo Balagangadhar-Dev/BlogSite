@@ -3,9 +3,6 @@ from .models import BlogPost, Category, Comment
 from .forms import PostForm
 
 # Create your views here.
-
-
-
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
@@ -55,7 +52,7 @@ def post_detail(request, post_id):
 @login_required
 def create_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('blog_home')  # Redirect to the homepage after saving

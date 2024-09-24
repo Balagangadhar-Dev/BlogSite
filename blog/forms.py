@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class PostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
-        fields = ['title', 'content', 'category']
+        fields = ['title', 'content', 'category', 'banner_img']
 
 
 

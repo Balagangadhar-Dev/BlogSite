@@ -21,7 +21,7 @@
 
     <div class="container mt-5">
         <h1>Create New Post</h1>
-        <form method="POST" class="mt-4">
+        <form method="POST" enctype="multipart/form-data" class="mt-4">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="id_title" class="form-label">Title</label>
@@ -30,6 +30,9 @@
             <div class="mb-3">
                 <label for="id_content" class="form-label">Content</label>
                 {{ form.content }}
+            </div>            <div class="mb-3"></div>
+                <label for="id_content" class="form-label">Upload the Banner Image</label>
+                {{ form.banner_img }}
             </div>
             <div class="mb-3">
                 <label for="id_category" class="form-label">Category</label>
